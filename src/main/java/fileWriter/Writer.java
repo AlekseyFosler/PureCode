@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class Writer implements iWriter {
 
-    private final BufferedWriter bufferedWriter;
+    private final BufferedWriter bufWriter;
     private boolean isStreamClosed = false;
 
     public Writer(final String fileName) throws WriterException {
@@ -17,7 +17,7 @@ public class Writer implements iWriter {
             throw new WriterException("file_name_cant_null");
         }
         try {
-            bufferedWriter = new BufferedWriter(new java.io.FileWriter(fileName, false));
+            bufWriter = new BufferedWriter(new java.io.FileWriter(fileName, false));
         } catch (IOException ex) {
             throw new WriterException("file_cant_open");
         }
@@ -25,7 +25,7 @@ public class Writer implements iWriter {
 
     public void close() throws WriterException {
         try {
-            bufferedWriter.close();
+            bufWriter.close();
         } catch (IOException ex) {
             throw new WriterException("cant_close_file");
         }
@@ -37,7 +37,7 @@ public class Writer implements iWriter {
             return;
         }
         try {
-            bufferedWriter.write(data);
+            bufWriter.write(data);
         } catch (IOException ex) {
             throw new WriterException("cant_write_data");
         }
