@@ -7,5 +7,5 @@ import codeFormatter.situation.Situation;
  */
 public interface Handler {
 
-    void handle(Situation situation);
+    public void handle(Situation situation);
 }
