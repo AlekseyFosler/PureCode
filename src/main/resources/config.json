@@ -1,0 +1,19 @@
+{
+  "reader": {
+    "class": "codeFormatter.fileWriter.Reader",
+    "param": {
+      "file": "format.java"
+    }
+  },
+  "writer": {
+    "class": "codeFormatter.fileWriter.Writer",
+    "param": {
+      "file": "output.java"
+    }
+  },
+  "handlers": [
+    {
+      "key"  : "{",
+      "class": "codeFormatter.handlers.OpenBraceHandler"
+    }
+}

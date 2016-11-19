@@ -14,6 +14,7 @@ import java.util.Map;
  */
 public class ConfigParser implements IConfigParser {
 
+    public ConfigParser (){}
     @Override
     public Reader buildReader() {
         return null;
