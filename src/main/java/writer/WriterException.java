@@ -1,4 +1,4 @@
-package fileWriter;
+package writer;
 
 /**
  * Created by aleks on 16.11.2016.

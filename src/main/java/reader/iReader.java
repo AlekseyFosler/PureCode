@@ -1,4 +1,4 @@
-package fileReader;
+package reader;
 
 /**
  * Created by aleks on 16.11.2016.

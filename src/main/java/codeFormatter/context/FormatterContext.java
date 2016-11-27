@@ -1,50 +1,60 @@
-package codeFormatter.situation;
+package codeFormatter.context;
 
 /**
- * Created by aleks on 17.11.2016.
+ * Created by aleks on 28.11.2016.
  */
-public class JSFormatterSituation implements Situation{
-    private String currentCharacters;
+public class FormatterContext implements Context {
+
     private String lastCharacters;
+    private String currentCharacters;
     private String formatterString = "";
     private int nestingLevel;
 
-    public JSFormatterSituation() {}
+    public FormatterContext() {
+    }
 
+    @Override
     public String getCurrentCharacters() {
         return currentCharacters;
     }
 
+    @Override
     public String getLastCharacters() {
         return lastCharacters;
     }
 
+    @Override
     public String getFormattedString() {
         return formatterString;
     }
 
+    @Override
     public int getNestingLevel() {
         return nestingLevel;
     }
 
-    public boolean setCurrentCharacters(String currentCharacters) {
+    @Override
+    public Context getContext() {
+        return new FormatterContext();
+    }
+
+    @Override
+    public void setCurrentCharacters(String currentCharacters) {
         this.currentCharacters = currentCharacters;
-        return true;
     }
 
-    public boolean setLastCharacters(String lastCharacters) {
+    @Override
+    public void setLastCharacters(String lastCharacters) {
         this.lastCharacters = lastCharacters;
-        return true;
     }
 
-    public boolean setFormattedString(String formattedString) {
+    @Override
+    public void setFormattedString(String formattedString) {
         this.formatterString = formattedString;
-        return true;
     }
 
-    public boolean setNestingLevel(int nestingLevel) {
+    @Override
+    public void setNestingLevel(int nestingLevel) {
         this.nestingLevel = nestingLevel;
-        return true;
     }
-
 }

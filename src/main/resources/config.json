@@ -1,19 +1,36 @@
 {
   "reader": {
-    "class": "codeFormatter.fileWriter.Reader",
+    "class": "codeFormatter.writer.Reader",
     "param": {
       "file": "format.java"
     }
   },
+  "reader-strategy": {
+    "class": "codeFormatter.strategy.SignReaderStrategy"
+  },
   "writer": {
-    "class": "codeFormatter.fileWriter.Writer",
+    "class": "codeFormatter.writer.Writer",
     "param": {
       "file": "output.java"
     }
+  },
+  "formatter": {
+    "class": "codeFormatter.JSCodeFormatter"
   },
   "handlers": [
     {
       "key"  : "{",
       "class": "codeFormatter.handlers.OpenBraceHandler"
+    },
+    {
+      "key"  : "default",
+      "class": "codeFormatter.handlers.Default"
     }
+  ],
+  "context": {
+    "class": "codeFormatter.context.PermanentContext",
+    "params": {
+      "open-brace": "{"
+    }
+  }
 }
